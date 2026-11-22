@@ -1,5 +1,7 @@
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))  # run from the project folder so relative paths work anywhere
 t=open('template.html').read()
-t=t.replace('/*ENGINE*/',open('engine.js').read()).replace('/*UI*/',open('ui.js').read()).replace('/*ASSETS*/',open('assets.js').read()).replace('/*STADIUM*/',open('stadium.js').read()).replace('/*BUILDER*/',open('builder.js').read()).replace('/*SEASON*/',open('season.js').read()).replace('/*V3*/',open('three3d.js').read()).replace('/*FAKE*/',open('fakelogos.js').read()).replace('/*LIVE*/',open('live.js').read()+'\n'+open('announce.js').read()).replace('/*THREE*/',open('/home/claude/gridiron/vendor/three.min.js').read())
+t=t.replace('/*ENGINE*/',open('engine.js').read()).replace('/*UI*/',open('ui.js').read()).replace('/*ASSETS*/',open('assets.js').read()).replace('/*STADIUM*/',open('stadium.js').read()).replace('/*BUILDER*/',open('builder.js').read()).replace('/*SEASON*/',open('season.js').read()).replace('/*V3*/',open('three3d.js').read()).replace('/*FAKE*/',open('fakelogos.js').read()).replace('/*LIVE*/',open('live.js').read()+'\n'+open('announce.js').read()).replace('/*THREE*/',open('vendor/three.min.js').read())
 open('index.html','w').write(t)
 
 # ---- embed fonts so the game looks identical offline (downloaded file) ----
